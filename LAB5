@@ -1,0 +1,36 @@
+import re
+
+#1
+pattern1 = re.compile(r'ab*')
+
+#2
+pattern2 = re.compile(r'ab{2,3}')
+
+#3
+pattern3 = re.compile(r'[a-z]+_[a-z]+')
+
+#4
+pattern4 = re.compile(r'[A-Z][a-z]+')
+
+#5
+pattern5 = re.compile(r'a.*b$')
+
+#6
+string_to_replace = "This is, a sample. String"
+result6 = re.sub(r'[ ,.]', ':', string_to_replace)
+
+#7
+snake_case_string = "my_snake_case_string"
+camel_case_string = ''.join(word.capitalize() for word in snake_case_string.split('_'))
+
+#8
+string_to_split = "SplitThisString"
+result8 = re.findall('[A-Z][^A-Z]*', string_to_split)
+
+#9
+camel_case_string = "InsertSpacesHere"
+result9 = re.sub(r'([a-z])([A-Z])', r'\1 \2', camel_case_string)
+
+#10
+camel_case_string = "CamelCaseString"
+snake_case_string = re.sub(r'([a-z])([A-Z])', r'\1_\2', camel_case_string).lower()
